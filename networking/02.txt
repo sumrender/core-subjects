@@ -1,0 +1,73 @@
+transport layer   => segments
+network layer     => packets
+data link         => frames
+
+NETWORK LAYER
+hop by hop forwarding?
+forwarding table?
+
+IP address has 4 parts to it
+ex: 192.168.2.30 (except 30, rest is the network address)
+                         30 is the device address
+
+
+Control Plane is used to create routing tables.
+It is like graphs
+1) static routing: manually 
+2) dynamic routing: evolves
+
+protocol in network layer: INTERNET PROTOCOL (IP)
+
+IPv4: 32-bits, 4 words
+IPv6: 128-bits
+
+Class of IP addresses
+A    => 0.0.0.0    - 127.255.255.255
+B    => 128.0.0.0  - 191.255.255.255
+C    => 192.0.0.0  - 223.255.255.255
+D    => 224.0.0.0  - 239.255.255.255
+E    => 240.0.0.0  - 255.255.255.255
+
+Subnets?
+
+Reserved Adresses 
+127.0.0.0/8
+ex: localhost: 127.0.0.1
+
+Network layers has packets.
+
+Packets:
+  Header is of 20 bytes.
+  length, identifications, flags, addresses, TTL etc.
+
+IPv6: 2^32 unique combinations
+      4 times larger than IPv4
+      Hexadecimal
+    Cons: Not backward compatible
+        : lot of hardware work to shift
+
+
+Middle Boxes: found in network/transport layer.
+1) firewall: 2 types: global internet and your internet network
+
+  Filter out IP packets based on various rules.
+  -> Adresses, Modify Packets, Port no., Flags.
+
+  Stateless vs Stateful(more efficient)
+
+2) Network address Translation:
+  modify the address
+
+
+DATA LINK LAYER
+sends packets from network layer to physical layer.
+DHCP? has pool of ip addresses which it assigns to new devices.
+
+every device will have a data link layer address.
+all address first checked in cache then ARP cache. (address resolution protocol)
+
+DLL sends data in frames.
+DLL address is MAC address, and it is different for wifi, bluetooth,
+even different components of a single computer
+
+PHYSICAL LAYER:

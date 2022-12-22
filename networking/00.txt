@@ -1,0 +1,59 @@
+What is Computer, Network?
+
+Computer Network Architecture:
+  Peer to Peer P2P Network
+  Client/Server Network
+
+How did it start?
+  ARPANET
+
+What are protocols?
+  set of rules used for transfer files, acc. to situation.
+
+Why protocols?
+  to standardize and allow connection b/w large no. of people
+
+TCP: Transmission Control Protocol
+- want 100% data
+
+UDP:
+- some data may get lost. ex: video conferencing
+
+HTTP:
+
+Packets:
+IP address
+MAC address: check later
+
+// curl ifconfig.me -s
+// ip address of isp
+
+ISP => Modem/Router (Global IP address) => devices (local ip address via DHCP)
+NAT used by modem to send the response to device.
+
+The application which requested the resource can be identified by PORT no.
+Ports are 16 bit
+
+Port 80 for http 
+
+0 - 1023 reserved ports 
+1024 - 49152 something, also registered for some applications
+
+Submarine Cables for connections
+
+LAN
+
+MAN: Across a city
+
+WAN: using optical fibre cables across countries
+    SONET => Synchronus Optical Networking
+    Frame Relay
+
+============================================
+ Topologies
+
+i) Bus topology
+ii) Ring topology
+iii) Star topology: one central device 
+iv) Tree topology: bus + Star
+v) Mesh

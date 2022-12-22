@@ -1,0 +1,6 @@
+DBMS
+
+Data is collection of bits/bytes.
+Similar ex:
+  Image: 2D grid, again bits/bytes.
+  same for integers and others.

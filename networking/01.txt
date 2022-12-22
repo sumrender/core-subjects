@@ -1,0 +1,155 @@
+Structure of the Network:
+
+OSI MODEL:
+Open System Interconnections is a network architecture model based
+on ISO standards
+
+Layers:
+  Application  => software
+  Presentation => convert data from ascii to binary?, encryption, encoding, abstraction, compressed
+                  SSL used for encryption and decryption
+  Session      => manages connections, establish sessions, authentication
+  Transport    => sends data. for ex: using segmentation (making chunks), errors, data corruption check
+                  UDP and TCP
+  Network      => router lives here, logical addressing,
+  Data Link    => does logical addressing with MAC addresses to form a frame
+                  Media Access Control
+  Physical     => Transmits the signal or receives signals and converts it to bits
+
+
+TCP/IP model:
+The internet protocol suite
+Layers:
+  Application
+  Transport
+  Network
+  Data Unit
+  Physical
+
+but on interviewbit it is given that:
+4 layers:
+  Application 
+  Transport 
+  Internet 
+  Link
+====================================================
+1) Application layer 
+  user interacts with this, browser, whatsapp etc.
+  client-server architecture, P2P architectured (torrent)
+  ping?
+
+1:43:00 definitions
+  repeater, hub, bridges, router, switch etc.
+
+Protocols:
+  TCP/IP:
+      HTTP
+      DHCP
+      FTP
+      SMTP
+      POP3 and IMAC
+      SSH
+      VNC
+
+  Telnet: on port 23, not encoded, low level protocol
+  UDP: stateless connection, data may get lost
+
+Example of whatsapp messaging
+Sockets
+Ports: 
+  Ephemeral Ports exist on client side. ex: chrome instances
+
+HTTP:
+  => uses TCP 
+  => stateless, does not store client
+  => HTTP methods: get, post, put, delete
+
+  => Status codes:
+        1xx => Informational
+        2xx => success
+        3xx => redirecting
+        4xx => client error 
+        5xx => server error
+
+  => Cookies: unique string, stored in my browser
+
+How email works?
+  when you send an email, if it is to the same email service,
+  then it will directly be sent, but if it's to another email
+  service then SMTP protocol is used.
+
+  for receiving emails POP3 (Post office protocol) is used. Port 110
+
+  IMAP: Internet Message Access Protocol 
+
+DNS: Domain Name System
+
+mail.google.com
+mail => sub-domain 
+google => secondary domain 
+com => top level domain 
+
+When we enter a url, first it searches
+our local cache. If not, then it goes to 
+our local DNS which is ISP, then to the root server.
+
+2. TRANSPORT LAYER:
+  Between 2 computers message is sent by the network layer.
+  within 1 computer Transport layer takes it from the network and sends it to the 
+  application, i.e. to which application this is handled by this layer.
+
+  Data travel in packets, and transport layer will attach port no.
+  so they are sent to correct application.
+
+  Transport layer have multiplexer and de-multiplexer to handle 
+  the sending and receiving of data respectively.
+
+  Transport layer also takes care of congestion control.
+  congestion control algorithm built in TCP.
+
+  Checksum: if value comes same, then data received is not
+            corrupted
+  Retransmission Timer: starts when packet sent, and stops when
+            some response packet receive. If not received after some 
+            time packet expires.
+
+  Transport layer protocols:
+  UDP: User Dtatgram Protocol
+       ->data may or may not be delivered, data may change, data may 
+       not be in order.
+       -> connectionless protocol
+       -> UDP uses checksum, so you will know if data is corrupted, but 
+       you can't do anything about it.
+       
+       UDP packet:
+            Source port no.       | 
+            destination port no.  |  these 4 headers become 8 bits.
+            lenght of datagram    |
+            checksum              |
+            data
+
+      -> Use Cases:
+            It's very fast.
+            Video Conf application
+            DNS -> UDP 
+            Gaming
+  
+  TCP: Transmission Control Protocol
+      -> transport layer protocol
+      -> application layer sends lot of raw data.
+      -> tcp divides this into chunks, or segments.
+      -> Congestion control
+      -> handles 2 Cases
+          when data does not arrive.
+          maintains the order of dsta.
+
+      -> Features:
+          connection oriented
+          provides error control 
+          congestion control 
+          bi-directional, full-duplex
+
+      -> connection in TCP 
+          it adds a serial number and acknowledgement no.
+
+          3-way handshake

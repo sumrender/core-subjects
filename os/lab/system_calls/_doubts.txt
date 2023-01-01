@@ -1,0 +1,2 @@
+// unable to append in write system call
+// dup2 returns 0 in dup system call
